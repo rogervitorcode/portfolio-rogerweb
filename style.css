@@ -17,7 +17,6 @@ body{
 
 canvas{position:fixed;inset:0;z-index:-1}
 
-/* SEÇÕES */
 section{
     min-height:100vh;
     padding:120px 20px;
@@ -117,7 +116,7 @@ p{
 
 .icon{font-size:3.2rem;color:var(--blue);margin-bottom:20px}
 
-/* MOBILE (NÃO ALTERA DESKTOP) */
+
 @media(max-width:768px){
     h1{font-size:2.4rem}
     h2{font-size:2rem}
@@ -143,6 +142,45 @@ footer{text-align:center;padding:50px;opacity:.6}
     object-fit:cover;
 }
 ;
+body{
+    background:
+        radial-gradient(circle at top, var(--bg2), var(--bg)),
+        linear-gradient(120deg, #061a2e, #0a2e52, #061a2e);
+    background-size: 100% 100%, 300% 300%;
+    animation: bgShift 22s ease infinite;
+}
+
+@keyframes bgShift{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size:90px 90px;
+    pointer-events:none;
+    z-index:-2;
+}
+
+
+body::after{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:radial-gradient(
+        circle at center,
+        transparent 45%,
+        rgba(0,0,0,0.55) 100%
+    );
+    pointer-events:none;
+    z-index:-1;
+}
 
 
 
