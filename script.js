@@ -14,7 +14,7 @@ scene.add(mesh);
 const pGeo=new THREE.BufferGeometry();
 const count=1600, arr=[];
 for(let i=0;i<count;i++){
-    arr.push((Math.random()-0.5)*40,(Math.random()-0.5)*40,(Math.random()-0.5)*40);
+    arr.push((Math.random()-0.9)*100,(Math.random()-0.9)*100,(Math.random()-0.9)*100);
 }
 pGeo.setAttribute('position',new THREE.Float32BufferAttribute(arr,3));
 const pMat=new THREE.PointsMaterial({color:0x4da3ff,size:0.05,opacity:.6,transparent:true});
@@ -37,8 +37,8 @@ animate();
 
 addEventListener('scroll',()=>{
     const maxScroll = document.body.scrollHeight - innerHeight;
-const startZ = 4.3;   // posição inicial da câmera
-const endZ = 1.2;   // quão “dentro” da cena ela entra
+const startZ = 7;   // posição inicial da câmera
+const endZ = 1.5;   // quão “dentro” da cena ela entra
 
 addEventListener('scroll', () => {
     const scrollPercent = scrollY / maxScroll;
